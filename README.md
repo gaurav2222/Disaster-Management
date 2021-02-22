@@ -1,6 +1,8 @@
 # Codefundo++ Contest 2018
-This website is live at [this link.](https://teamrg.azurewebsites.net/ "Disaster Management")
-## Project Idea
+
+### Short Summary
+A website developed with an objective to reduce the damages of lives and properties during a natural disaster like storms, hurricanes, etc. This site was developed mainly using HTML, CSS, and Javascript. [Here](https://teamrg.azurewebsites.net/ "Disaster Management") is the link to the website.
+#### Project Idea
 
 The technology follows prediction, propagation and evacuation as it's 3 important stages. These are discussed clearly in order below.
 
