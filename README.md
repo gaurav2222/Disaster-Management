@@ -1,5 +1,5 @@
 # Codefundo++ Contest 2018
-This website is live at [this link](https://teamrg.azurewebsites.net/ "Disaster Management")
+This website is live at [this link.](https://teamrg.azurewebsites.net/ "Disaster Management")
 ## Project Idea
 
 The technology follows prediction, propagation and evacuation as it's 3 important stages. These are discussed clearly in order below.
