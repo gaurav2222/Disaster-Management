@@ -14,4 +14,4 @@ The technology follows prediction, propagation and evacuation as it's 3 importan
   
   This way we can save maximum people's life and after the human lives are saved or during the evacuation process, we would be able to safeguard valuable properties. Also this prevents havoc situation.
   
-  Thankyou.
+  Thank You.
