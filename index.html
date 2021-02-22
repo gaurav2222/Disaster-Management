@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ravi Teja">
+    <meta name="keywords" content="Ravi Teja, Ravi, Teja, Weather Information, Weather Prediction">
+    
+
+    <title>Team RG</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <style type="text/css">
+    html{
+        scroll-behavior: smooth;
+    }
+        @media screen and (min-width: 1200px) {
+        .navbar-default {
+                padding: 30px 0;
+                transition: padding 0.3s;
+            }
+                .navbar-default.navbar-shrink {
+                    padding: 10px 0;
+                }
+        }
+        nav{
+            color: rgb(101,166,145);
+        }
+        .navbar-default a {
+            color: rgb(101,166,145);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+            line-height: 42px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+            .navbar-default a.active {
+                color: rgb(101,166,145);
+            }
+        .content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+            .content > section {
+                width: 100%;
+                height: 100%;
+            }
+            
+        #blank{
+            background-blend-mode: inherit;
+            max-height: 15%;
+        }
+        
+        #weatherInformation {
+            background-color: #eb7e7f;
+        }
+        #Maps {
+            background-color: #415c71;
+            overflow:auto;
+        }
+        #matter{
+            font-size: 20px;
+        }
+        
+
+        @import "compass/css3";
+
+* {
+  @include box-sizing(border-box); 
+}
+
+#theme{
+  background: #eee;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.module {
+  width: 90%;
+  height: 100vh;
+  min-height: 200px;
+  background: radial-gradient(circle, rgba(34,175,195,1) 69%, rgba(253,187,45,1) 100%);
+  position: relative;
+  float: left;
+  padding: 20px;
+  margin-right: 4%;
+  margin-left: 4%;
+  margin-bottom: 4%;
+  &:nth-child(even) {
+    margin-right: 0;
+  }
+  box-shadow: 0 1px 3px rgba(black, 0.2);
+}
+.language{
+    margin-left: 25%;
+}
+
+.theme {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/blurry-blue.jpg);
+  background-size: cover;
+  padding: 30px;
+}
+.reloc{
+    color: chocolate;
+    font-size: 20px;
+    margin-left: 5%;
+}
+ 
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s;
+}
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+      
+#Maps{
+    background: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&h=350");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 105vmax;
+    }
+#earth {
+  position: relative;
+  width: 100vmin;
+  height: 100vmin;
+  padding-top: 100vmin;
+  margin: auto auto;
+  background: url("map.jpg") 0 0 repeat;
+  border-radius: 50%;
+  background-size: 1500px;
+  animation: rotate 10s linear infinite;
+  transition: transform 200ms linear;
+  transform-style: preserve-3d;
+  box-shadow: inset 20px 0 80px 6px rgba(0, 0, 0, 1);
+  color: #000;
+}
+
+#earth:after {
+  content: "";
+  position: absolute;
+  display: block;
+  
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: -80px 15px 80px 10px rgba(0,0,0,.9) inset;
+}
+
+#earth:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+
+@keyframes rotate {
+  0% {background-position: 0 0;}
+  100% {background-position: 1500px 0;}
+}
+.top{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  border: 2px solid lightslategray;
+  padding: 1em;
+  margin: 1em;
+  background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.top:hover{
+  cursor: pointer;
+}
+
+.button{
+    font-size: 25px;
+    border-radius: 15px;
+    margin-left:10%;
+    margin-top: 5px;
+    width: 80vmin;
+    height: 35px;
+    background-color:lightseagreen;
+}
+.b{
+    color: orange;
+}
+.b:hover{
+    color:rosybrown;
+}
+#weatherInformation{
+    width: 100%;
+    height: 56.25%;
+    background-image: url('weather.png');
+}
+.weatherInfo{
+    text-align: center;
+    color: goldenrod;
+    font-size: 2em;
+    margin-bottom: 0px;
+}
+.reloc{
+    text-align: center;
+}
+#matter,#matter1,#matter2,#matter3,#matter4{
+    font-size: 3vw;
+}
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container" >
+            
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="top-nav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="#theme">Theme</a>
+                    </li>
+                    <li>
+                        <a href="#weatherInformation">Weather Information</a>
+                    </li>
+                    <li>
+                        <a href="#Maps">Maps</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        
+    </nav>
+
+    
+    <div class="content">
+        <section id="blank"></section>
+        <div class="theme">
+        <section id="theme">
+            <p id="display">Please select the language :</p>
+            <div class="language">
+                <div class="row">
+                    <div class="col-xs-4">
+                <button onclick="langE()" class="btn btn-default" id="English">English</button></div>
+                <div class="col-xs-4"><button onclick="langH()" class="btn btn-default" id="Hindi">Hindi</button></div>
+                <div class="col-xs-4"><button onclick="langT()" class="btn btn-default" id="Telugu">Telugu</button></div>
+            </div>
+            </div>
+            <p id="matter"></p>
+            <div class="module">
+              <div class="ima1"><img src="Earthquake.jpg" width="100%" height="230vmax"></div>
+              <p id="matter1"></p>
+            </div>
+            <div class="module">
+                    <div class="ima1"><img src="Tsunami.jpg" width="100%" height="230vmax"></div>
+                    <p id="matter2"></p>
+            </div>
+            <div class="module">
+                    <div class="ima1"><img src="Hurricane.jpg" width="100%" height="230vmax"></div>
+                    <p id="matter3"></p>
+            </div>
+            <div class="module">
+                    <div class="ima1"><img src="Landslide.jpg" width="100%" height="230vmax"></div>
+                    <p id="matter4"></p>
+            </div>
+                
+        </section>
+        </div>
+        <section id="weatherInformation">
+            <p class="weatherInfo">Check the weather updates <a href="weather.html">here</a>.Please wait while weather information loads and reload if doesn't open once</p>
+        </section>
+        <section id="Maps">
+                <div id="earth">
+                    <p class="reloc">Use maps for viewing safe places incase of evacuation and<strong> also use radio for communication</strong></p>
+            <button class="button" ><a class="b" href="https://play.google.com/store/apps/details?id=com.google.android.apps.maps"> Google Maps</a></button>
+                </div>
+        </section>
+    </div>
+    <div class="top">Top</div>
+</div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            $('#top-nav > ul > li > a').click(function (e) {
+                e.preventDefault();
+                var curLink = $(this);
+                var scrollPoint = $(curLink.attr('href')).position().top;
+                $('body,html').animate({
+                    scrollTop: scrollPoint
+                }, 500);
+            })
+            $(window).scroll(function () {
+                onScrollHandle();
+            });
+            function onScrollHandle() {
+                
+                $(".navbar-default").toggleClass("navbar-shrink", $(this).scrollTop() > 50);
+                
+                var currentScrollPos = $(document).scrollTop();
+                
+                $('#top-nav > ul > li > a').each(function () {
+                    var curLink = $(this);
+                    var refElem = $(curLink.attr('href'));
+                    
+                    if (refElem.position().top <= currentScrollPos && refElem.position().top + refElem.height() > currentScrollPos) {
+                        
+                        $('#top-nav > ul > li').removeClass("active");
+                        
+                        curLink.parent().addClass("active");
+                    }
+                    else {
+                        curLink.parent().removeClass("active");
+                    }
+                });
+            }
+        });
+        (function($) {
+
+$.fn.visible = function(partial) {
+  
+    var $t            = $(this),
+        $w            = $(window),
+        viewTop       = $w.scrollTop(),
+        viewBottom    = viewTop + $w.height(),
+        _top          = $t.offset().top,
+        _bottom       = _top + $t.height(),
+        compareTop    = partial === true ? _bottom : _top,
+        compareBottom = partial === true ? _top : _bottom;
+  
+  return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+};
+  
+})(jQuery); 
+
+
+
+var win = $(window);
+
+var allMods = $(".module");
+
+allMods.each(function(i, el) {
+var el = $(el);
+if (el.visible(true)) {
+  el.addClass("already-visible"); 
+} 
+});
+
+win.scroll(function(event) {
+
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("come-in"); 
+  } 
+});
+
+});
+function langE(){
+    var a = "No need to worry about the natural disasters! Check for the weather foercast, incase of any warning open maps link provided and search for a safe place. If communication is not possible open radio by the link provided and listen for the updates."
+    document.getElementById("matter").innerHTML=a;
+    document.getElementById("matter1").innerHTML="Earthquake is caused by movement in earth’s crust layers and generally it happens naturally.To be safe from its impact we need to move out from our house and go to a safe place by searching on map provided.";
+    document.getElementById("matter2").innerHTML="Tsunami is caused when earthquake epicenter is in the ocean or nearby ocean. This results in big waves which travel large distance within minutes. With the help of the map, we can overcome its impact we need to immediately shift to high altitude places such as hills, mountains, etc.";
+    document.getElementById("matter3").innerHTML="Storms are also known as hurricanes or typhoons depending on the location where it originates and is caused by rising of sea level due to low pressure and high wind speed. To prevent from this we can contact government officials and ask for help. We should also be going away from storms affected area.";
+    document.getElementById("matter4").innerHTML="Landslides are caused by volcanic eruptions, earthquake, erosion(falling of big stones of mountains) on road. We should ask for help by government officials. Concerned authorities should direct the surface water away from landslides by searching on map.";
+    $("#English").css("background-color","blue");
+    $("#English").css("color","orange");
+    $("#Hindi").css("background-color","white");
+    $("#Hindi").css("color","black");
+    $("#Telugu").css("background-color","white");
+    $("#Telugu").css("color","black");
+}
+function langH(){
+    var a="प्रक्रिती कि प्रकोप से अब डर्ने कि जरूरत नही! वातावरण सूचना देखिये, यदि कुछ दुर्घटना होने वाला हे तो माप्स का लिन्क दबइए।अगर आप किसी से संपर्क नहीं कर सकते हैं तो रेडियो खोलें और अपडेट सुनें। ";
+    document.getElementById("matter").innerHTML=a;
+    document.getElementById("matter1").innerHTML="भूकंप पृथ्वी की परत परतों में आंदोलन के कारण होता है और आम तौर पर यह स्वाभाविक रूप से होता है। इसके प्रभाव से सुरक्षित होने के लिए हमें अपने घर से बाहर निकलने और प्रदान किए गए मानचित्र पर खोज करके सुरक्षित जगह पर जाना होगा।";
+    document.getElementById("matter2").innerHTML="सुनामी का कारण तब होता है जब भूकंप महाकाव्य महासागर या पास के महासागर में होता है। इसके परिणामस्वरूप बड़ी लहरें होती हैं जो मिनटों के भीतर बड़ी दूरी की यात्रा करती हैं। मानचित्र की मदद से, हम इसके प्रभाव को दूर कर सकते हैं, हमें पहाड़ियों, पहाड़ियों आदि जैसे उच्च ऊंचाई स्थानों पर जाने की जरूरत है।";
+    document.getElementById("matter3").innerHTML="तूफान को उस स्थान के आधार पर तूफान या टाइफून के रूप में भी जाना जाता है जहां यह उत्पत्ति करता है और कम दबाव और उच्च हवा की गति के कारण समुद्र स्तर के बढ़ने के कारण होता है। इससे रोकने के लिए हम सरकारी अधिकारियों से संपर्क कर सकते हैं और मदद मांग सकते हैं। हमें तूफान प्रभावित क्षेत्र से भी दूर जाना चाहिए।";
+    document.getElementById("matter4").innerHTML="भूस्खलन सड़क पर ज्वालामुखी विस्फोट, भूकंप, क्षरण (पहाड़ों के बड़े पत्थरों के गिरने) के कारण होता है। हमें सरकारी अधिकारियों द्वारा मदद मांगी जानी चाहिए। संबंधित अधिकारियों को मानचित्र पर खोज करके भूजल से सतह के पानी को दूर करना चाहिए।";
+    $("#English").css("background-color","white");
+    $("#English").css("color","black");
+    $("#Hindi").css("background-color","blue");
+    $("#Hindi").css("color","orange");
+    $("#Telugu").css("background-color","white");
+    $("#Telugu").css("color","black");
+}
+function langT(){
+    var a="ప్రకృతి వైపరీత్యాలు గురించి ఆందోళన అవసరం లేదు!వాతావరణ సమాచారం కోసం తనిఖీ చేయండి.ఒక వేళ ఏదైనా ప్రమాదం జరగవచ్చు మీరు భావిస్తే లింక్ నుండి గూగుల్ పటాలు ను తెరవండి.రేడియో కూడా ఉపయోగించండి.";
+    document.getElementById("matter").innerHTML=a;
+    document.getElementById("matter1").innerHTML="భూమి యొక్క పొర పొరలలో కదలిక వల్ల భూకంపం సంభవిస్తుంది మరియు సాధారణంగా ఇది సహజంగా జరుగుతుంది. దాని ప్రభావం నుండి సురక్షితంగా ఉండటానికి మన ఇంటి నుండి బయటికి వెళ్లి అందించిన మ్యాప్లో శోధించడం ద్వారా సురక్షిత ప్రదేశానికి వెళ్లాలి.";
+    document.getElementById("matter2").innerHTML="భూకంప కేంద్రం మహాసముద్రంలో లేదా సమీప సముద్రంలో ఉన్నప్పుడు సునామి సంభవిస్తుంది. ఈ ఫలితాలను నిమిషాల్లో పెద్ద దూరం ప్రయాణించే పెద్ద తరంగాలు. పటం యొక్క సహాయంతో, మేము దాని ప్రభావాన్ని అధిగమించగలము, మనం కొండలు, పర్వతాలు మొదలైన వాటి వంటి ప్రదేశాలకు వెళ్లాలి.";
+    document.getElementById("matter3").innerHTML="తుఫానులు కూడా తుఫానులు లేదా తుఫాన్లుగా పిలువబడతాయి, వీటిని చోటుచేసుకొని, తక్కువ ఒత్తిడి మరియు అధిక గాలి వేగం కారణంగా సముద్ర మట్టం పెరుగుతుంది. దీనిని నివారించడానికి మేము ప్రభుత్వ అధికారులను సంప్రదించి సహాయం కోసం అడగవచ్చు. మేము తుఫానులు ప్రభావిత ప్రాంతం నుండి దూరంగా వెళ్లాలి.";
+    document.getElementById("matter4").innerHTML="అగ్నిపర్వత విస్పోటనస్, భూకంపం, ఎరోరోషన్ (పర్వతాల పెద్ద రాళ్ల పడటం) రోడ్డు మీద కొండచరియలు సంభవించాయి. ప్రభుత్వ అధికారుల సహాయం కోసం మేము అడగాలి. భూగర్భ ప్రాంతాల నుండి ఉపరితల జలాలను మ్యాప్లో శోధించడం ద్వారా సంబంధిత అధికారులు దర్శకత్వం చేయాలి.";
+    $("#English").css("background-color","white");
+    $("#Hindi").css("background-color","white");
+    $("#Hindi").css("color","black");
+    $("#Telugu").css("background-color","blue");
+    $("#Telugu").css("color","orange");
+}
+var $Top = $(".top");
+$Top.hide();
+
+
+  $(window).on('scroll', function() {
+    if ($(this).scrollTop() > 100) {
+      $Top.fadeIn();
+    } else {
+      $Top.fadeOut();
+      }
+  });
+
+  $Top.on('click', function(e) {
+  $("html, body").animate({scrollTop: 0}, 500);
+});
+    </script>
+    
+</body>
+</html>
